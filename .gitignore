@@ -43,6 +43,9 @@ yarn-error.log*
 # claude code
 .claude/
 
+# resume / personal docs
+*.pdf
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
