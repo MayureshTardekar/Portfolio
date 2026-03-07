@@ -144,41 +144,6 @@ export const PROJECTS: Project[] = [
     duration: "3 weeks",
   },
   {
-    title: "BidArena",
-    slug: "bidarena",
-    description:
-      "Real-Time Auction Platform — Supporting concurrent live bidding with JWT auth and Razorpay payments.",
-    longDescription:
-      "Engineered a real-time auction platform supporting concurrent live bidding with JWT authentication and integrated Razorpay payment workflows. Implemented WebSocket-based event broadcasting using Socket.io for instant bid updates. Automated auction lifecycle management using background cron jobs for expiry handling and winner finalization.",
-    techStack: ["React", "TypeScript", "Node.js", "MongoDB"],
-    github: "https://github.com/MayureshTardekar",
-    live: "https://bidarena-six.vercel.app/",
-    image: "/images/bidarena.png",
-    featured: true,
-    year: "2025",
-    problemStatement:
-      "Traditional auction platforms suffer from latency issues where users don't see bid updates in real-time, leading to poor user experience and unfair bidding outcomes.",
-    solutionApproach:
-      "Built a WebSocket-powered architecture using Socket.io that broadcasts bid events instantly to all connected clients. Combined with automated lifecycle management using cron jobs for auction expiry, cleanup, and winner determination.",
-    keyFeatures: [
-      "Real-time bid updates via WebSocket (Socket.io)",
-      "JWT authentication with secure session management",
-      "Razorpay payment integration for seamless transactions",
-      "Automated auction lifecycle (start, expire, finalize winner)",
-      "Background cron jobs for cleanup and expiry handling",
-      "Concurrent bidding support with race condition handling",
-    ],
-    challenges: [
-      "Handling race conditions when multiple users bid simultaneously",
-      "Designing reliable auction expiry with background cron jobs",
-      "Integrating Razorpay payment flow with auction winner determination",
-    ],
-    architecture:
-      "React + TypeScript frontend → Node.js + Express backend → MongoDB database → Socket.io for real-time events → Razorpay payment gateway → node-cron for scheduled tasks",
-    teamSize: "Solo",
-    duration: "2 weeks",
-  },
-  {
     title: "EzyVote",
     slug: "ezyvote",
     description:
@@ -212,6 +177,41 @@ export const PROJECTS: Project[] = [
       "React frontend → ethers.js for blockchain interaction → Solidity smart contracts on Ethereum → Hardhat for testing and deployment → OpenZeppelin for security patterns",
     teamSize: "Solo",
     duration: "1 month",
+  },
+  {
+    title: "BidArena",
+    slug: "bidarena",
+    description:
+      "Real-Time Auction Platform — Supporting concurrent live bidding with JWT auth and Razorpay payments.",
+    longDescription:
+      "Engineered a real-time auction platform supporting concurrent live bidding with JWT authentication and integrated Razorpay payment workflows. Implemented WebSocket-based event broadcasting using Socket.io for instant bid updates. Automated auction lifecycle management using background cron jobs for expiry handling and winner finalization.",
+    techStack: ["React", "TypeScript", "Node.js", "MongoDB"],
+    github: "https://github.com/MayureshTardekar",
+    live: "https://bidarena-six.vercel.app/",
+    image: "/images/bidarena.png",
+    featured: true,
+    year: "2025",
+    problemStatement:
+      "Traditional auction platforms suffer from latency issues where users don't see bid updates in real-time, leading to poor user experience and unfair bidding outcomes.",
+    solutionApproach:
+      "Built a WebSocket-powered architecture using Socket.io that broadcasts bid events instantly to all connected clients. Combined with automated lifecycle management using cron jobs for auction expiry, cleanup, and winner determination.",
+    keyFeatures: [
+      "Real-time bid updates via WebSocket (Socket.io)",
+      "JWT authentication with secure session management",
+      "Razorpay payment integration for seamless transactions",
+      "Automated auction lifecycle (start, expire, finalize winner)",
+      "Background cron jobs for cleanup and expiry handling",
+      "Concurrent bidding support with race condition handling",
+    ],
+    challenges: [
+      "Handling race conditions when multiple users bid simultaneously",
+      "Designing reliable auction expiry with background cron jobs",
+      "Integrating Razorpay payment flow with auction winner determination",
+    ],
+    architecture:
+      "React + TypeScript frontend → Node.js + Express backend → MongoDB database → Socket.io for real-time events → Razorpay payment gateway → node-cron for scheduled tasks",
+    teamSize: "Solo",
+    duration: "2 weeks",
   },
   {
     title: "Sahayak",
@@ -337,11 +337,11 @@ export const TERMINAL_COMMANDS: Record<string, string> = {
 > 1. AgentForge — AI No-Code Chatbot Builder
 >    React, TypeScript, Supabase, pgvector
 >
-> 2. BidArena — Real-Time Auction Platform
->    React, TypeScript, Node.js, MongoDB
->
-> 3. EzyVote — Decentralized Voting dApp
+> 2. EzyVote — Decentralized Voting dApp
 >    Solidity, Hardhat, ethers.js, OpenZeppelin
+>
+> 3. BidArena — Real-Time Auction Platform
+>    React, TypeScript, Node.js, MongoDB
 >
 > 4. Sahayak — AI Railway Complaint System (Hackathon)
 >    React, TypeScript, Python, Supabase, Gemini API`,
