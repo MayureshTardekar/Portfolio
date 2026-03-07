@@ -109,40 +109,6 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    title: "Sahayak",
-    slug: "sahayak",
-    description:
-      "AI-Powered Railway Complaint Intelligence System — 3-tier AI pipeline for multilingual complaint classification and prioritization.",
-    longDescription:
-      "Built during a 10-hour hackathon, Sahayak is a sophisticated complaint management system for Indian Railways. Citizens can submit complaints in multiple languages (Hindi, Marathi, English), which are automatically classified and prioritized using a multi-tier AI pipeline combining DistilBERT, Google Gemini, and keyword-based fallback.",
-    techStack: ["React", "TypeScript", "Python", "Supabase", "Gemini API"],
-    github: "https://github.com/MayureshTardekar/Sahayak-Hackathon-10hr",
-    live: "https://mayurop1.lovable.app",
-    featured: true,
-    year: "2026",
-    problemStatement:
-      "Indian Railways receives thousands of complaints daily in multiple languages with no automated way to classify severity, route to the right department, or identify systemic issues across regions.",
-    solutionApproach:
-      "Built a 3-tier AI classification pipeline: Tier 1 uses a fine-tuned DistilBERT model for high-confidence local classification. Tier 2 falls back to Google Gemini 2.5 Flash API for complex cases. Tier 3 uses keyword-based offline classification as the final fallback, ensuring 100% uptime.",
-    keyFeatures: [
-      "Multilingual complaint submission (Hindi, Marathi, English)",
-      "3-tier AI classification pipeline (DistilBERT → Gemini → Keywords)",
-      "Real-time admin dashboard with live stats and analytics",
-      "KMeans clustering analysis with SVD projections for pattern detection",
-      "QR code-based mobile submission for field officers",
-      "Role-based access control with Google OAuth",
-    ],
-    challenges: [
-      "Training DistilBERT on limited multilingual railway complaint data within hackathon timeframe",
-      "Designing a graceful fallback system that maintains classification quality across all 3 tiers",
-      "Building responsive real-time dashboard with complex data visualizations under time pressure",
-    ],
-    architecture:
-      "React + TypeScript frontend with Tailwind/shadcn UI → Supabase backend with PostgreSQL → Python ML pipeline (Flask + DistilBERT) → Google Gemini API fallback → Edge Functions for serverless logic",
-    teamSize: "Team of 4",
-    duration: "10 hours (hackathon)",
-  },
-  {
     title: "AgentForge",
     slug: "agentforge",
     description:
@@ -151,6 +117,8 @@ export const PROJECTS: Project[] = [
       "Designed and built a multi-tenant SaaS platform that allows users to create and deploy AI-powered chatbots using Retrieval-Augmented Generation (RAG) without writing code. Implemented a document ingestion pipeline with chunking, embedding generation, and pgvector-based semantic search. Built an embeddable real-time chat widget with theme customization, analytics dashboard, and automated fallback to human agents.",
     techStack: ["React", "TypeScript", "Supabase", "pgvector"],
     github: "https://github.com/MayureshTardekar",
+    live: "https://forgeagent.in/",
+    image: "/images/agentforge.png",
     featured: true,
     year: "2025",
     problemStatement:
@@ -184,6 +152,8 @@ export const PROJECTS: Project[] = [
       "Engineered a real-time auction platform supporting concurrent live bidding with JWT authentication and integrated Razorpay payment workflows. Implemented WebSocket-based event broadcasting using Socket.io for instant bid updates. Automated auction lifecycle management using background cron jobs for expiry handling and winner finalization.",
     techStack: ["React", "TypeScript", "Node.js", "MongoDB"],
     github: "https://github.com/MayureshTardekar",
+    live: "https://bidarena-six.vercel.app/",
+    image: "/images/bidarena.png",
     featured: true,
     year: "2025",
     problemStatement:
@@ -217,6 +187,8 @@ export const PROJECTS: Project[] = [
       "Developed a blockchain-based voting system using Solidity smart contracts to ensure immutability, transparency, and tamper resistance. Integrated ethers.js for seamless frontend-contract communication. Optimized gas usage and applied OpenZeppelin security standards.",
     techStack: ["Solidity", "Hardhat", "ethers.js", "OpenZeppelin"],
     github: "https://github.com/MayureshTardekar",
+    live: "https://ezyvote-git-stable-vite5-mayuresh0512s-projects.vercel.app/",
+    image: "/images/ezyvote.png",
     featured: true,
     year: "2024-2025",
     problemStatement:
@@ -240,6 +212,41 @@ export const PROJECTS: Project[] = [
       "React frontend → ethers.js for blockchain interaction → Solidity smart contracts on Ethereum → Hardhat for testing and deployment → OpenZeppelin for security patterns",
     teamSize: "Solo",
     duration: "1 month",
+  },
+  {
+    title: "Sahayak",
+    slug: "sahayak",
+    description:
+      "AI-Powered Railway Complaint Intelligence System — 3-tier AI pipeline for multilingual complaint classification and prioritization.",
+    longDescription:
+      "Built during a 10-hour hackathon, Sahayak is a sophisticated complaint management system for Indian Railways. Citizens can submit complaints in multiple languages (Hindi, Marathi, English), which are automatically classified and prioritized using a multi-tier AI pipeline combining DistilBERT, Google Gemini, and keyword-based fallback.",
+    techStack: ["React", "TypeScript", "Python", "Supabase", "Gemini API"],
+    github: "https://github.com/MayureshTardekar/Sahayak-Hackathon-10hr",
+    live: "https://mayurop1.lovable.app",
+    image: "/images/sahayak.png",
+    featured: true,
+    year: "2026",
+    problemStatement:
+      "Indian Railways receives thousands of complaints daily in multiple languages with no automated way to classify severity, route to the right department, or identify systemic issues across regions.",
+    solutionApproach:
+      "Built a 3-tier AI classification pipeline: Tier 1 uses a fine-tuned DistilBERT model for high-confidence local classification. Tier 2 falls back to Google Gemini 2.5 Flash API for complex cases. Tier 3 uses keyword-based offline classification as the final fallback, ensuring 100% uptime.",
+    keyFeatures: [
+      "Multilingual complaint submission (Hindi, Marathi, English)",
+      "3-tier AI classification pipeline (DistilBERT → Gemini → Keywords)",
+      "Real-time admin dashboard with live stats and analytics",
+      "KMeans clustering analysis with SVD projections for pattern detection",
+      "QR code-based mobile submission for field officers",
+      "Role-based access control with Google OAuth",
+    ],
+    challenges: [
+      "Training DistilBERT on limited multilingual railway complaint data within hackathon timeframe",
+      "Designing a graceful fallback system that maintains classification quality across all 3 tiers",
+      "Building responsive real-time dashboard with complex data visualizations under time pressure",
+    ],
+    architecture:
+      "React + TypeScript frontend with Tailwind/shadcn UI → Supabase backend with PostgreSQL → Python ML pipeline (Flask + DistilBERT) → Google Gemini API fallback → Edge Functions for serverless logic",
+    teamSize: "Team of 4",
+    duration: "10 hours (hackathon)",
   },
 ];
 
@@ -327,17 +334,17 @@ export const TERMINAL_COMMANDS: Record<string, string> = {
 > Blockchain: Solidity, ethers.js, OpenZeppelin
 > Tools:      Git, GitHub, Postman`,
   projects: `
-> 1. Sahayak — AI Railway Complaint System (Hackathon)
->    React, TypeScript, Python, Supabase, Gemini API
->
-> 2. AgentForge — AI No-Code Chatbot Builder
+> 1. AgentForge — AI No-Code Chatbot Builder
 >    React, TypeScript, Supabase, pgvector
 >
-> 3. BidArena — Real-Time Auction Platform
+> 2. BidArena — Real-Time Auction Platform
 >    React, TypeScript, Node.js, MongoDB
 >
-> 4. EzyVote — Decentralized Voting dApp
->    Solidity, Hardhat, ethers.js, OpenZeppelin`,
+> 3. EzyVote — Decentralized Voting dApp
+>    Solidity, Hardhat, ethers.js, OpenZeppelin
+>
+> 4. Sahayak — AI Railway Complaint System (Hackathon)
+>    React, TypeScript, Python, Supabase, Gemini API`,
   experience: `
 > Education:
 >   MCA @ SPIT Mumbai (2025-2027)

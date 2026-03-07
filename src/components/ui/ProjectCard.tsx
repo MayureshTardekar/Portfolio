@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/constants";
 
@@ -20,18 +21,29 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileHover={{ y: -6 }}
       className="glass group flex flex-col rounded-xl overflow-hidden"
     >
-      {/* Gradient header - clickable */}
+      {/* Header with screenshot or gradient fallback - clickable */}
       <Link
         href={`/projects/${project.slug}`}
-        className="relative h-40 bg-gradient-to-br from-primary/30 via-primary/10 to-cyan-500/20 p-6 flex items-end cursor-pointer"
+        className="relative h-48 bg-gradient-to-br from-primary/30 via-primary/10 to-cyan-500/20 flex items-end cursor-pointer overflow-hidden"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,0.15),transparent_70%)]" />
-        <div className="relative flex items-center justify-between w-full">
-          <span className="rounded-full bg-primary/20 px-3 py-1 text-xs font-mono text-primary">
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,0.15),transparent_70%)]" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        <div className="relative flex items-center justify-between w-full p-6">
+          <span className="rounded-full bg-primary/20 backdrop-blur-sm px-3 py-1 text-xs font-mono text-primary">
             {project.year}
           </span>
           {project.live && (
-            <span className="rounded-full bg-green-500/20 px-2 py-0.5 text-[10px] text-green-400">
+            <span className="rounded-full bg-green-500/20 backdrop-blur-sm px-2 py-0.5 text-[10px] text-green-400">
               LIVE
             </span>
           )}
