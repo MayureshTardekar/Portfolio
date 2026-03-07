@@ -2,6 +2,7 @@
 
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/constants";
+import VisitorCounter from "@/components/ui/VisitorCounter";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,9 +11,12 @@ export default function Footer() {
     <footer className="border-t border-border bg-card/50">
       <div className="mx-auto max-w-6xl px-6 py-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <div className="flex items-center gap-1 text-sm text-muted-foreground">
-            <span>&copy; {currentYear} Mayuresh Tardekar. Built with</span>
-            <Heart size={14} className="text-red-500" fill="currentColor" />
+          <div className="flex flex-col items-center gap-2 sm:items-start">
+            <div className="flex items-center gap-1 text-sm text-muted-foreground">
+              <span>&copy; {currentYear} Mayuresh Tardekar. Built with</span>
+              <Heart size={14} className="text-red-500" fill="currentColor" />
+            </div>
+            <VisitorCounter />
           </div>
 
           <div className="flex items-center gap-4">

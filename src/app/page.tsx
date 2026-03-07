@@ -14,6 +14,9 @@ import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import Terminal from "@/components/ui/Terminal";
 import EasterEgg from "@/components/ui/EasterEgg";
+import GitHubActivity from "@/components/ui/GitHubActivity";
+import SpotifyWidget from "@/components/ui/SpotifyWidget";
+import ChatBot from "@/components/ui/ChatBot";
 
 const HeroScene = lazy(() => import("@/components/three/HeroScene"));
 
@@ -24,6 +27,7 @@ export default function Home() {
     <>
       <CustomCursor />
       <EasterEgg />
+      <ChatBot />
       <Navbar
         terminalMode={terminalMode}
         onToggleTerminal={() => setTerminalMode(!terminalMode)}
@@ -46,13 +50,23 @@ export default function Home() {
             <Skills />
             <Projects />
             <Experience />
+            {/* GitHub Activity Section */}
+            <section className="section-container">
+              <GitHubActivity />
+            </section>
+
             <Testimonials />
             <Contact />
           </main>
         )}
       </AnimatePresence>
 
-      {!terminalMode && <Footer />}
+      {!terminalMode && (
+        <>
+          <SpotifyWidget />
+          <Footer />
+        </>
+      )}
     </>
   );
 }
