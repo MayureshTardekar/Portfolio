@@ -10,7 +10,6 @@ import {
   SiPrisma,
   SiDocker,
   SiKubernetes,
-  SiAmazonwebservices,
   SiSolidity,
   SiPython,
   SiJavascript,
@@ -20,7 +19,7 @@ import {
   SiLinux,
   SiTailwindcss,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
+import { FaJava, FaAws } from "react-icons/fa";
 import { TbBrandCpp } from "react-icons/tb";
 
 export const PERSONAL_INFO = {
@@ -77,7 +76,7 @@ export const SKILLS: Skill[] = [
   { name: "MySQL", icon: SiMysql, category: "Database", level: 75 },
   { name: "Supabase", icon: SiSupabase, category: "Database", level: 80 },
   { name: "Prisma", icon: SiPrisma, category: "Database", level: 75 },
-  { name: "AWS", icon: SiAmazonwebservices, category: "DevOps", level: 65 },
+  { name: "AWS", icon: FaAws, category: "DevOps", level: 65 },
   { name: "Docker", icon: SiDocker, category: "DevOps", level: 70 },
   { name: "Kubernetes", icon: SiKubernetes, category: "DevOps", level: 60 },
   { name: "Linux", icon: SiLinux, category: "DevOps", level: 75 },
