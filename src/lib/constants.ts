@@ -31,6 +31,7 @@ export const PERSONAL_INFO = {
   location: "Mumbai, India",
   github: "https://github.com/MayureshTardekar",
   linkedin: "https://linkedin.com/in/mayuop",
+  twitter: "https://x.com/MayuuuOP",
   bio: `I'm a Full-Stack Developer & MCA student at SPIT Mumbai, passionate about building scalable web applications and exploring emerging technologies like blockchain and AI. I love turning complex problems into elegant solutions.`,
   shortBio: "Building things that live on the internet.",
   resumeUrl: "/resume.pdf",

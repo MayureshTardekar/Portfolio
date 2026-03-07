@@ -10,8 +10,8 @@ export default function CustomCursor() {
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
-  const springX = useSpring(cursorX, { damping: 25, stiffness: 250 });
-  const springY = useSpring(cursorY, { damping: 25, stiffness: 250 });
+  const springX = useSpring(cursorX, { damping: 40, stiffness: 800, mass: 0.2 });
+  const springY = useSpring(cursorY, { damping: 40, stiffness: 800, mass: 0.2 });
 
   useEffect(() => {
     // Don't show custom cursor on touch devices

@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, Twitter } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/constants";
 import VisitorCounter from "@/components/ui/VisitorCounter";
 
@@ -37,6 +37,15 @@ export default function Footer() {
               aria-label="LinkedIn"
             >
               <Linkedin size={18} />
+            </a>
+            <a
+              href={PERSONAL_INFO.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+              aria-label="X / Twitter"
+            >
+              <Twitter size={18} />
             </a>
             <a
               href={`mailto:${PERSONAL_INFO.email}`}

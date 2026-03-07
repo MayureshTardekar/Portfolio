@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Twitter } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/constants";
 
 export default function Hero() {
@@ -107,6 +107,15 @@ export default function Hero() {
             aria-label="LinkedIn"
           >
             <Linkedin size={18} />
+          </a>
+          <a
+            href={PERSONAL_INFO.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-border bg-card p-3 text-muted-foreground transition-all hover:border-primary hover:text-foreground"
+            aria-label="X / Twitter"
+          >
+            <Twitter size={18} />
           </a>
         </motion.div>
 
