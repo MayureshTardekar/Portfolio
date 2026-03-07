@@ -89,6 +89,7 @@ export const SKILLS: Skill[] = [
 
 export interface Project {
   title: string;
+  slug: string;
   description: string;
   longDescription: string;
   techStack: string[];
@@ -97,11 +98,53 @@ export interface Project {
   image?: string;
   featured: boolean;
   year: string;
+  problemStatement?: string;
+  solutionApproach?: string;
+  keyFeatures?: string[];
+  challenges?: string[];
+  architecture?: string;
+  teamSize?: string;
+  duration?: string;
 }
 
 export const PROJECTS: Project[] = [
   {
+    title: "Sahayak",
+    slug: "sahayak",
+    description:
+      "AI-Powered Railway Complaint Intelligence System — 3-tier AI pipeline for multilingual complaint classification and prioritization.",
+    longDescription:
+      "Built during a 10-hour hackathon, Sahayak is a sophisticated complaint management system for Indian Railways. Citizens can submit complaints in multiple languages (Hindi, Marathi, English), which are automatically classified and prioritized using a multi-tier AI pipeline combining DistilBERT, Google Gemini, and keyword-based fallback.",
+    techStack: ["React", "TypeScript", "Python", "Supabase", "Gemini API"],
+    github: "https://github.com/MayureshTardekar/Sahayak-Hackathon-10hr",
+    live: "https://mayurop1.lovable.app",
+    featured: true,
+    year: "2026",
+    problemStatement:
+      "Indian Railways receives thousands of complaints daily in multiple languages with no automated way to classify severity, route to the right department, or identify systemic issues across regions.",
+    solutionApproach:
+      "Built a 3-tier AI classification pipeline: Tier 1 uses a fine-tuned DistilBERT model for high-confidence local classification. Tier 2 falls back to Google Gemini 2.5 Flash API for complex cases. Tier 3 uses keyword-based offline classification as the final fallback, ensuring 100% uptime.",
+    keyFeatures: [
+      "Multilingual complaint submission (Hindi, Marathi, English)",
+      "3-tier AI classification pipeline (DistilBERT → Gemini → Keywords)",
+      "Real-time admin dashboard with live stats and analytics",
+      "KMeans clustering analysis with SVD projections for pattern detection",
+      "QR code-based mobile submission for field officers",
+      "Role-based access control with Google OAuth",
+    ],
+    challenges: [
+      "Training DistilBERT on limited multilingual railway complaint data within hackathon timeframe",
+      "Designing a graceful fallback system that maintains classification quality across all 3 tiers",
+      "Building responsive real-time dashboard with complex data visualizations under time pressure",
+    ],
+    architecture:
+      "React + TypeScript frontend with Tailwind/shadcn UI → Supabase backend with PostgreSQL → Python ML pipeline (Flask + DistilBERT) → Google Gemini API fallback → Edge Functions for serverless logic",
+    teamSize: "Team of 4",
+    duration: "10 hours (hackathon)",
+  },
+  {
     title: "AgentForge",
+    slug: "agentforge",
     description:
       "AI No-Code Chatbot Builder — A multi-tenant SaaS platform for creating and deploying AI-powered chatbots using RAG.",
     longDescription:
@@ -110,9 +153,31 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/MayureshTardekar",
     featured: true,
     year: "2025",
+    problemStatement:
+      "Businesses need custom AI chatbots trained on their own data, but building RAG systems requires significant engineering expertise and infrastructure knowledge.",
+    solutionApproach:
+      "Created a no-code platform where users upload documents, which are automatically chunked, embedded, and stored in pgvector for semantic search. The chatbot uses RAG to provide accurate, context-aware responses from the uploaded knowledge base.",
+    keyFeatures: [
+      "No-code chatbot creation with document upload",
+      "RAG pipeline with chunking, embeddings, and pgvector semantic search",
+      "Embeddable chat widget with theme customization",
+      "Analytics dashboard tracking conversations and satisfaction",
+      "Automated fallback to human agents for unresolved queries",
+      "Multi-tenant architecture with isolated data per user",
+    ],
+    challenges: [
+      "Optimizing document chunking strategy for different file types to maintain context",
+      "Implementing efficient pgvector similarity search at scale",
+      "Building a real-time embeddable widget that works across different host websites",
+    ],
+    architecture:
+      "React + TypeScript frontend → Supabase backend with PostgreSQL + pgvector → Document ingestion pipeline → Embedding generation → Semantic search → LLM response generation",
+    teamSize: "Solo",
+    duration: "3 weeks",
   },
   {
     title: "BidArena",
+    slug: "bidarena",
     description:
       "Real-Time Auction Platform — Supporting concurrent live bidding with JWT auth and Razorpay payments.",
     longDescription:
@@ -121,9 +186,31 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/MayureshTardekar",
     featured: true,
     year: "2025",
+    problemStatement:
+      "Traditional auction platforms suffer from latency issues where users don't see bid updates in real-time, leading to poor user experience and unfair bidding outcomes.",
+    solutionApproach:
+      "Built a WebSocket-powered architecture using Socket.io that broadcasts bid events instantly to all connected clients. Combined with automated lifecycle management using cron jobs for auction expiry, cleanup, and winner determination.",
+    keyFeatures: [
+      "Real-time bid updates via WebSocket (Socket.io)",
+      "JWT authentication with secure session management",
+      "Razorpay payment integration for seamless transactions",
+      "Automated auction lifecycle (start, expire, finalize winner)",
+      "Background cron jobs for cleanup and expiry handling",
+      "Concurrent bidding support with race condition handling",
+    ],
+    challenges: [
+      "Handling race conditions when multiple users bid simultaneously",
+      "Designing reliable auction expiry with background cron jobs",
+      "Integrating Razorpay payment flow with auction winner determination",
+    ],
+    architecture:
+      "React + TypeScript frontend → Node.js + Express backend → MongoDB database → Socket.io for real-time events → Razorpay payment gateway → node-cron for scheduled tasks",
+    teamSize: "Solo",
+    duration: "2 weeks",
   },
   {
     title: "EzyVote",
+    slug: "ezyvote",
     description:
       "Decentralized Voting dApp — A blockchain-based voting system ensuring immutability and transparency.",
     longDescription:
@@ -132,6 +219,27 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/MayureshTardekar",
     featured: true,
     year: "2024-2025",
+    problemStatement:
+      "Traditional voting systems are vulnerable to tampering, lack transparency, and require trust in centralized authorities to ensure fair elections.",
+    solutionApproach:
+      "Leveraged blockchain's immutability to create a transparent voting system where every vote is permanently recorded on-chain. Smart contracts enforce voting rules automatically, eliminating the need for trusted intermediaries.",
+    keyFeatures: [
+      "Immutable on-chain vote recording",
+      "Transparent election results verifiable by anyone",
+      "Smart contract-enforced voting rules (one person, one vote)",
+      "Wallet-based authentication (no passwords)",
+      "Gas-optimized contract deployment",
+      "OpenZeppelin security standards for attack prevention",
+    ],
+    challenges: [
+      "Optimizing Solidity gas costs while maintaining security guarantees",
+      "Implementing secure voter verification without compromising anonymity",
+      "Synchronizing frontend state with on-chain transaction confirmations",
+    ],
+    architecture:
+      "React frontend → ethers.js for blockchain interaction → Solidity smart contracts on Ethereum → Hardhat for testing and deployment → OpenZeppelin for security patterns",
+    teamSize: "Solo",
+    duration: "1 month",
   },
 ];
 
@@ -219,13 +327,16 @@ export const TERMINAL_COMMANDS: Record<string, string> = {
 > Blockchain: Solidity, ethers.js, OpenZeppelin
 > Tools:      Git, GitHub, Postman`,
   projects: `
-> 1. AgentForge — AI No-Code Chatbot Builder
+> 1. Sahayak — AI Railway Complaint System (Hackathon)
+>    React, TypeScript, Python, Supabase, Gemini API
+>
+> 2. AgentForge — AI No-Code Chatbot Builder
 >    React, TypeScript, Supabase, pgvector
 >
-> 2. BidArena — Real-Time Auction Platform
+> 3. BidArena — Real-Time Auction Platform
 >    React, TypeScript, Node.js, MongoDB
 >
-> 3. EzyVote — Decentralized Voting dApp
+> 4. EzyVote — Decentralized Voting dApp
 >    Solidity, Hardhat, ethers.js, OpenZeppelin`,
   experience: `
 > Education:
