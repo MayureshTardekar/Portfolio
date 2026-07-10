@@ -14,9 +14,11 @@ export default function Experience() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-12 text-center"
         >
-          <p className="mb-2 font-mono text-sm text-primary">// my journey</p>
+          <p className="mb-2 font-mono text-sm text-primary">
+            {"// my journey"}
+          </p>
           <h2 className="text-3xl font-bold sm:text-4xl">
-            Experience & <span className="gradient-text">Education</span>
+            Education & <span className="gradient-text">Achievements</span>
           </h2>
         </motion.div>
 

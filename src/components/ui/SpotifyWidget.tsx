@@ -3,6 +3,7 @@
 import useSWR from "swr";
 import { motion } from "framer-motion";
 import { Music } from "lucide-react";
+import Image from "next/image";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
@@ -38,9 +39,11 @@ export default function SpotifyWidget() {
     >
       {/* Album art */}
       {data.albumArt && (
-        <img
+        <Image
           src={data.albumArt}
           alt={data.album}
+          width={32}
+          height={32}
           className="h-8 w-8 rounded-full animate-spin"
           style={{ animationDuration: "3s" }}
         />

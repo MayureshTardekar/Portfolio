@@ -181,7 +181,9 @@ export default function CaseStudyPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-400">
                   <AlertTriangle size={20} />
                 </div>
-                <p className="font-mono text-sm text-primary">// the problem</p>
+                <p className="font-mono text-sm text-primary">
+                  {"// the problem"}
+                </p>
               </motion.div>
 
               <motion.h2 variants={fadeUp} className="mb-6 text-3xl font-bold sm:text-4xl">
@@ -213,7 +215,9 @@ export default function CaseStudyPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/10 text-green-400">
                   <Lightbulb size={20} />
                 </div>
-                <p className="font-mono text-sm text-primary">// the solution</p>
+                <p className="font-mono text-sm text-primary">
+                  {"// the solution"}
+                </p>
               </motion.div>
 
               <motion.h2 variants={fadeUp} className="mb-6 text-3xl font-bold sm:text-4xl">
@@ -245,7 +249,9 @@ export default function CaseStudyPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
                   <Layers size={20} />
                 </div>
-                <p className="font-mono text-sm text-primary">// architecture</p>
+                <p className="font-mono text-sm text-primary">
+                  {"// architecture"}
+                </p>
               </motion.div>
 
               <motion.h2 variants={fadeUp} className="mb-8 text-3xl font-bold sm:text-4xl">
@@ -286,7 +292,9 @@ export default function CaseStudyPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-400">
                   <Zap size={20} />
                 </div>
-                <p className="font-mono text-sm text-primary">// features</p>
+                <p className="font-mono text-sm text-primary">
+                  {"// features"}
+                </p>
               </motion.div>
 
               <motion.h2 variants={fadeUp} className="mb-8 text-3xl font-bold sm:text-4xl">
@@ -327,7 +335,7 @@ export default function CaseStudyPage() {
                   <AlertTriangle size={20} />
                 </div>
                 <p className="font-mono text-sm text-primary">
-                  // challenges & learnings
+                  {"// challenges & learnings"}
                 </p>
               </motion.div>
 

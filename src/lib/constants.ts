@@ -26,8 +26,8 @@ export const PERSONAL_INFO = {
   name: "Mayuresh Tardekar",
   title: "Software Engineer",
   subtitle: "Full-Stack Developer",
+  availability: "Open to Full-Stack Internships",
   email: "mayutardekar1205@gmail.com",
-  phone: "+91 88283 34158",
   location: "Mumbai, India",
   github: "https://github.com/MayureshTardekar",
   linkedin: "https://linkedin.com/in/mayuop",
@@ -116,7 +116,6 @@ export const PROJECTS: Project[] = [
     longDescription:
       "Designed and built a multi-tenant SaaS platform that allows users to create and deploy AI-powered chatbots using Retrieval-Augmented Generation (RAG) without writing code. Implemented a document ingestion pipeline with chunking, embedding generation, and pgvector-based semantic search. Built an embeddable real-time chat widget with theme customization, analytics dashboard, and automated fallback to human agents.",
     techStack: ["React", "TypeScript", "Supabase", "pgvector"],
-    github: "https://github.com/MayureshTardekar",
     live: "https://forgeagent.in/",
     image: "/images/agentforge.png",
     featured: true,
@@ -151,7 +150,7 @@ export const PROJECTS: Project[] = [
     longDescription:
       "Developed a blockchain-based voting system using Solidity smart contracts to ensure immutability, transparency, and tamper resistance. Integrated ethers.js for seamless frontend-contract communication. Optimized gas usage and applied OpenZeppelin security standards.",
     techStack: ["Solidity", "Hardhat", "ethers.js", "OpenZeppelin"],
-    github: "https://github.com/MayureshTardekar",
+    github: "https://github.com/MayureshTardekar/EzyVote-Prototype",
     live: "https://ezyvote-git-stable-vite5-mayuresh0512s-projects.vercel.app/",
     image: "/images/ezyvote.png",
     featured: true,
@@ -186,7 +185,7 @@ export const PROJECTS: Project[] = [
     longDescription:
       "Engineered a real-time auction platform supporting concurrent live bidding with JWT authentication and integrated Razorpay payment workflows. Implemented WebSocket-based event broadcasting using Socket.io for instant bid updates. Automated auction lifecycle management using background cron jobs for expiry handling and winner finalization.",
     techStack: ["React", "TypeScript", "Node.js", "MongoDB"],
-    github: "https://github.com/MayureshTardekar",
+    github: "https://github.com/MayureshTardekar/BidArena",
     live: "https://bidarena-six.vercel.app/",
     image: "/images/bidarena.png",
     featured: true,
@@ -222,7 +221,6 @@ export const PROJECTS: Project[] = [
       "Built during a 10-hour hackathon, Sahayak is a sophisticated complaint management system for Indian Railways. Citizens can submit complaints in multiple languages (Hindi, Marathi, English), which are automatically classified and prioritized using a multi-tier AI pipeline combining DistilBERT, Google Gemini, and keyword-based fallback.",
     techStack: ["React", "TypeScript", "Python", "Supabase", "Gemini API"],
     github: "https://github.com/MayureshTardekar/Sahayak-Hackathon-10hr",
-    live: "https://mayurop1.lovable.app",
     image: "/images/sahayak.png",
     featured: true,
     year: "2026",
@@ -356,7 +354,6 @@ export const TERMINAL_COMMANDS: Record<string, string> = {
 >   NPTEL Certs - ML, Big Data, Coding Theory (2024)`,
   contact: `
 > Email:    mayutardekar1205@gmail.com
-> Phone:    +91 88283 34158
 > LinkedIn: linkedin.com/in/mayuop
 > GitHub:   github.com/MayureshTardekar
 > Location: Mumbai, India`,
