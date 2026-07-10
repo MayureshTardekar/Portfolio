@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { Send, Mail, MapPin, Github, Linkedin, Twitter } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/constants";
 
 export default function Contact() {
@@ -14,26 +14,41 @@ export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
   );
+  const [fallbackHref, setFallbackHref] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-
-    // mailto fallback - opens email client
+  const buildMailtoHref = () => {
     const subject = `Portfolio Contact from ${formData.name}`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    window.open(
-      `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    );
+    return `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
 
-    setStatus("sent");
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setStatus("idle"), 3000);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+    setFallbackHref("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Contact service unavailable");
+      }
+
+      setStatus("sent");
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch {
+      setFallbackHref(buildMailtoHref());
+      setStatus("error");
+    }
   };
 
   const contactInfo = [
     { icon: Mail, label: "Email", value: PERSONAL_INFO.email, href: `mailto:${PERSONAL_INFO.email}` },
-    { icon: Phone, label: "Phone", value: PERSONAL_INFO.phone, href: `tel:${PERSONAL_INFO.phone.replace(/\s/g, "")}` },
     { icon: MapPin, label: "Location", value: PERSONAL_INFO.location },
   ];
 
@@ -47,7 +62,7 @@ export default function Contact() {
           className="mb-12 text-center"
         >
           <p className="mb-2 font-mono text-sm text-primary">
-            // let&apos;s connect
+            {"// let's connect"}
           </p>
           <h2 className="text-3xl font-bold sm:text-4xl">
             Get In <span className="gradient-text">Touch</span>
@@ -98,6 +113,7 @@ export default function Contact() {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
                 className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all hover:border-primary hover:text-foreground"
               >
                 <Github size={18} />
@@ -106,6 +122,7 @@ export default function Contact() {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all hover:border-primary hover:text-foreground"
               >
                 <Linkedin size={18} />
@@ -114,6 +131,7 @@ export default function Contact() {
                 href={PERSONAL_INFO.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="X / Twitter"
                 className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all hover:border-primary hover:text-foreground"
               >
                 <Twitter size={18} />
@@ -182,6 +200,8 @@ export default function Contact() {
             >
               {status === "sent" ? (
                 "Message Sent!"
+              ) : status === "sending" ? (
+                "Sending..."
               ) : (
                 <>
                   <Send size={16} />
@@ -189,6 +209,23 @@ export default function Contact() {
                 </>
               )}
             </button>
+            {status === "sent" && (
+              <p className="text-sm text-green-400">
+                Thanks, your message was sent successfully.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-sm text-muted-foreground">
+                The message service is not configured yet.{" "}
+                <a
+                  href={fallbackHref || `mailto:${PERSONAL_INFO.email}`}
+                  className="text-primary hover:text-foreground"
+                >
+                  Email me directly
+                </a>
+                .
+              </p>
+            )}
           </motion.form>
         </div>
       </div>

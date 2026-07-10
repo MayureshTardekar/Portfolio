@@ -38,7 +38,9 @@ export default function About() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-12 text-center"
         >
-          <p className="mb-2 font-mono text-sm text-primary">// who am i</p>
+          <p className="mb-2 font-mono text-sm text-primary">
+            {"// who am i"}
+          </p>
           <h2 className="text-3xl font-bold sm:text-4xl">
             About <span className="gradient-text">Me</span>
           </h2>
@@ -56,10 +58,10 @@ export default function About() {
               {PERSONAL_INFO.bio}
             </p>
             <p className="text-muted-foreground">
-              When I&apos;m not coding, you&apos;ll find me exploring new
-              technologies, participating in hackathons, or contributing to
-              open-source projects. I believe in continuous learning and building
-              products that make a real impact.
+              Right now I&apos;m focused on RAG products, real-time systems,
+              and blockchain apps through projects like AgentForge, BidArena,
+              EzyVote, and Sahayak. I&apos;m looking for internship roles where
+              I can build production features end to end.
             </p>
           </motion.div>
 

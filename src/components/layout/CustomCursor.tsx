@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [hasMoved, setHasMoved] = useState(false);
 
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
@@ -17,10 +17,10 @@ export default function CustomCursor() {
     // Don't show custom cursor on touch devices
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
-    setIsVisible(true);
     document.body.style.cursor = "none";
 
     const moveCursor = (e: MouseEvent) => {
+      setHasMoved(true);
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
     };
@@ -54,13 +54,11 @@ export default function CustomCursor() {
     };
   }, [cursorX, cursorY]);
 
-  if (!isVisible) return null;
-
   return (
     <>
       {/* Main dot */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full bg-primary"
+        className="custom-cursor pointer-events-none fixed top-0 left-0 z-[9999] rounded-full bg-primary"
         style={{
           x: springX,
           y: springY,
@@ -68,13 +66,13 @@ export default function CustomCursor() {
           height: isHovering ? 40 : 8,
           translateX: isHovering ? -20 : -4,
           translateY: isHovering ? -20 : -4,
-          opacity: isHovering ? 0.3 : 1,
+          opacity: hasMoved ? (isHovering ? 0.3 : 1) : 0,
         }}
         transition={{ duration: 0.15 }}
       />
       {/* Outer ring */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9998] rounded-full border border-primary/50"
+        className="custom-cursor pointer-events-none fixed top-0 left-0 z-[9998] rounded-full border border-primary/50"
         style={{
           x: springX,
           y: springY,
@@ -82,6 +80,7 @@ export default function CustomCursor() {
           height: isHovering ? 50 : 32,
           translateX: isHovering ? -25 : -16,
           translateY: isHovering ? -25 : -16,
+          opacity: hasMoved ? 1 : 0,
         }}
         transition={{ duration: 0.15 }}
       />

@@ -37,7 +37,7 @@ export default function Skills() {
           className="mb-12 text-center"
         >
           <p className="mb-2 font-mono text-sm text-primary">
-            // what i work with
+            {"// what i work with"}
           </p>
           <h2 className="text-3xl font-bold sm:text-4xl">
             Technical <span className="gradient-text">Skills</span>

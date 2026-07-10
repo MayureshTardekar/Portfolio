@@ -29,7 +29,7 @@ export default function Projects() {
           className="mb-12 text-center"
         >
           <p className="mb-2 font-mono text-sm text-primary">
-            // what i&apos;ve built
+            {"// what i've built"}
           </p>
           <h2 className="text-3xl font-bold sm:text-4xl">
             Featured <span className="gradient-text">Projects</span>

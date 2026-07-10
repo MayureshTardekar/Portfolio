@@ -28,7 +28,9 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
           </span>
-          <span className="text-muted-foreground">Open to opportunities</span>
+          <span className="text-muted-foreground">
+            {PERSONAL_INFO.availability}
+          </span>
         </motion.div>
 
         {/* Main heading */}
