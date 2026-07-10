@@ -15,7 +15,7 @@ import Terminal from "@/components/ui/Terminal";
 import EasterEgg from "@/components/ui/EasterEgg";
 import GitHubActivity from "@/components/ui/GitHubActivity";
 import SpotifyWidget from "@/components/ui/SpotifyWidget";
-import ChatBot from "@/components/ui/ChatBot";
+// import ChatBot from "@/components/ui/ChatBot";
 
 const HeroScene = lazy(() => import("@/components/three/HeroScene"));
 
@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <CustomCursor />
       <EasterEgg />
-      <ChatBot />
+      {/* <ChatBot /> */}
       <Navbar
         terminalMode={terminalMode}
         onToggleTerminal={() => setTerminalMode(!terminalMode)}

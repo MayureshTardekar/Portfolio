@@ -60,14 +60,52 @@ export default function Terminal() {
       return;
     }
 
+    const parts = trimmed.split(/\s+/);
+    const cmdName = parts[0];
+    const cmdArg = parts[1] || "";
+
     if (trimmed === "github") {
       newLines.push({ content: TERMINAL_COMMANDS.github, type: "output" });
       window.open(PERSONAL_INFO.github, "_blank");
-    } else if (trimmed === "resume") {
-      newLines.push({ content: TERMINAL_COMMANDS.resume, type: "output" });
+    } else if (cmdName === "resume") {
+      let file = "/resumes/resume-tech.pdf";
+      let label = "Full-Stack Dev Resume";
+      
+      if (cmdArg === "-ats" || cmdArg === "ats" || cmdArg === "-a" || cmdArg === "a") {
+        file = "/resumes/resume-ats.pdf";
+        label = "ATS-Friendly Resume";
+      } else if (cmdArg === "-photo" || cmdArg === "photo" || cmdArg === "-p" || cmdArg === "p") {
+        file = "/resumes/resume-photo.pdf";
+        label = "Resume with Photo";
+      } else if (cmdArg === "-tech" || cmdArg === "tech" || cmdArg === "-t" || cmdArg === "t") {
+        file = "/resumes/resume-tech.pdf";
+        label = "Full-Stack Dev Resume";
+      } else if (cmdArg === "help" || cmdArg === "--help" || cmdArg === "-h") {
+        newLines.push({
+          content: `Usage: resume [option]
+Options:
+  -tech, -t   - Full-Stack Developer Resume (Default)
+  -ats, -a    - ATS-Friendly Resume (No Photo)
+  -photo, -p  - Resume with Photo`,
+          type: "output",
+        });
+        newLines.push({ content: "", type: "output" });
+        setLines(newLines);
+        return;
+      } else if (cmdArg !== "") {
+        newLines.push({
+          content: `Unknown option: ${cmdArg}. Type "resume -h" for usage.`,
+          type: "output",
+        });
+        newLines.push({ content: "", type: "output" });
+        setLines(newLines);
+        return;
+      }
+
+      newLines.push({ content: `> Downloading ${label}... 📄`, type: "output" });
       const a = document.createElement("a");
-      a.href = PERSONAL_INFO.resumeUrl;
-      a.download = "Mayuresh_Tardekar_Resume.pdf";
+      a.href = file;
+      a.download = `Mayuresh_Tardekar_${label.replace(/\s+/g, "_")}.pdf`;
       a.click();
     } else if (TERMINAL_COMMANDS[trimmed]) {
       newLines.push({

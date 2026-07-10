@@ -57,34 +57,236 @@ export type SkillCategory =
 
 export interface Skill {
   name: string;
-  icon: React.ComponentType<{ className?: string; size?: number }>;
+  icon: React.ComponentType<{ className?: string; size?: number; style?: React.CSSProperties }>;
   category: SkillCategory;
   level: number; // 0-100
+  color: string;
+  whyUsed: string;
+  whereUsed: string;
+  whyLearned: string;
 }
 
 export const SKILLS: Skill[] = [
-  { name: "JavaScript", icon: SiJavascript, category: "Languages", level: 90 },
-  { name: "TypeScript", icon: SiTypescript, category: "Languages", level: 85 },
-  { name: "Python", icon: SiPython, category: "Languages", level: 80 },
-  { name: "Java", icon: FaJava, category: "Languages", level: 75 },
-  { name: "C++", icon: TbBrandCpp, category: "Languages", level: 70 },
-  { name: "React", icon: SiReact, category: "Frontend", level: 90 },
-  { name: "Next.js", icon: SiNextdotjs, category: "Frontend", level: 85 },
-  { name: "Tailwind CSS", icon: SiTailwindcss, category: "Frontend", level: 90 },
-  { name: "Node.js", icon: SiNodedotjs, category: "Backend", level: 85 },
-  { name: "Express", icon: SiExpress, category: "Backend", level: 85 },
-  { name: "MongoDB", icon: SiMongodb, category: "Database", level: 85 },
-  { name: "MySQL", icon: SiMysql, category: "Database", level: 75 },
-  { name: "Supabase", icon: SiSupabase, category: "Database", level: 80 },
-  { name: "Prisma", icon: SiPrisma, category: "Database", level: 75 },
-  { name: "AWS", icon: FaAws, category: "DevOps", level: 65 },
-  { name: "Docker", icon: SiDocker, category: "DevOps", level: 70 },
-  { name: "Kubernetes", icon: SiKubernetes, category: "DevOps", level: 60 },
-  { name: "Linux", icon: SiLinux, category: "DevOps", level: 75 },
-  { name: "Solidity", icon: SiSolidity, category: "Blockchain", level: 70 },
-  { name: "Git", icon: SiGit, category: "Tools", level: 90 },
-  { name: "GitHub", icon: SiGithub, category: "Tools", level: 90 },
-  { name: "Postman", icon: SiPostman, category: "Tools", level: 85 },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    category: "Languages",
+    level: 90,
+    color: "#f7df1e",
+    whyUsed: "JavaScript is the core programming language of the web, enabling interactive interfaces and dynamic web content.",
+    whereUsed: "Used across all web projects, including the frontend UI of AgentForge, EzyVote, and BidArena.",
+    whyLearned: "Learned as a foundational language in my academic curriculum at SPIT Mumbai to understand client-side web scripting."
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    category: "Languages",
+    level: 85,
+    color: "#3178c6",
+    whyUsed: "TypeScript adds static typing to JavaScript, preventing runtime errors and enabling excellent IDE autocompletion.",
+    whereUsed: "Used in AgentForge, BidArena, and Sahayak to build type-safe React components and structured APIs.",
+    whyLearned: "Self-learned to scale JavaScript applications reliably and build type-safe features in projects like AgentForge and Sahayak."
+  },
+  {
+    name: "Python",
+    icon: SiPython,
+    category: "Languages",
+    level: 80,
+    color: "#3776ab",
+    whyUsed: "Python is the premier language for data science, machine learning, AI pipelines, and scripting backend services.",
+    whereUsed: "Used to build the Sahayak ML pipeline backend, using Flask to host the text classification model.",
+    whyLearned: "Self-learned to explore machine learning, AI libraries (DistilBERT, Gemini API), and automate data workflows."
+  },
+  {
+    name: "Java",
+    icon: FaJava,
+    category: "Languages",
+    level: 75,
+    color: "#b07219",
+    whyUsed: "Java is a versatile, object-oriented language renowned for its enterprise robustness and cross-platform compatibility.",
+    whereUsed: "Used in academic projects at SPIT Mumbai to understand object-oriented programming patterns and multi-threaded systems.",
+    whyLearned: "Learned during academics at SPIT Mumbai to master Object-Oriented Programming (OOP) concepts and clean architecture."
+  },
+  {
+    name: "C++",
+    icon: TbBrandCpp,
+    category: "Languages",
+    level: 70,
+    color: "#00599c",
+    whyUsed: "C++ offers low-level control, high performance, and manual memory management, ideal for systems engineering.",
+    whereUsed: "Used to solve core data structure and algorithm challenges during technical interview preparation.",
+    whyLearned: "Learned in academics to understand manual memory management, pointers, and solve data structures and algorithm (DSA) challenges."
+  },
+  {
+    name: "React",
+    icon: SiReact,
+    category: "Frontend",
+    level: 90,
+    color: "#61dafb",
+    whyUsed: "React is a component-based frontend library for building highly responsive, interactive, and modular user interfaces.",
+    whereUsed: "Used to construct the client interfaces for AgentForge, BidArena, EzyVote, and Sahayak.",
+    whyLearned: "Studied during academics at SPIT Mumbai and expanded my skills by building robust SPAs and complex frontend interfaces."
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    category: "Frontend",
+    level: 85,
+    color: "#ffffff",
+    whyUsed: "Next.js is a React framework that supports server-side rendering, static site generation, and serverless API functions.",
+    whereUsed: "Used as the core architecture of this portfolio site, integrating App Router page generation.",
+    whyLearned: "Self-learned to leverage server-side rendering, static site generation, and build high-performance search-engine optimized full-stack apps."
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    category: "Frontend",
+    level: 90,
+    color: "#06b6d4",
+    whyUsed: "Tailwind CSS is a utility-first styling framework that allows building responsive user interfaces directly in components.",
+    whereUsed: "Used for modern styling, dark/light theme tokens, and custom layouts in AgentForge, BidArena, and this portfolio.",
+    whyLearned: "Self-learned to accelerate UI prototyping and write clean, responsive layouts without bulky stylesheet boilerplate."
+  },
+  {
+    name: "Node.js",
+    icon: SiNodedotjs,
+    category: "Backend",
+    level: 85,
+    color: "#339933",
+    whyUsed: "Node.js allows running JavaScript on the server, building fast, event-driven, and highly scalable backend runtimes.",
+    whereUsed: "Used in the BidArena live auction backend to handle multi-client connections and express API services.",
+    whyLearned: "Self-learned to write event-driven backend runtimes and real-time WebSocket applications in JavaScript."
+  },
+  {
+    name: "Express",
+    icon: SiExpress,
+    category: "Backend",
+    level: 85,
+    color: "#a0a0b0",
+    whyUsed: "Express is a minimal and flexible web application framework for Node.js, providing robust tooling for APIs.",
+    whereUsed: "Used in BidArena to build modular REST APIs for user registration, auth, and auction actions.",
+    whyLearned: "Learned in academics at SPIT Mumbai as the standard micro-framework for building web services and structured APIs in Node.js."
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    category: "Database",
+    level: 85,
+    color: "#47a248",
+    whyUsed: "MongoDB is a document-oriented NoSQL database that offers flexible schema structures and fast JSON querying.",
+    whereUsed: "Used in BidArena to store dynamic auction products, bidding histories, and user profile data.",
+    whyLearned: "Learned in my database curriculum at SPIT Mumbai to manage document-oriented, schema-less data structures."
+  },
+  {
+    name: "MySQL",
+    icon: SiMysql,
+    category: "Database",
+    level: 75,
+    color: "#00758f",
+    whyUsed: "MySQL is a popular relational database management system that structures structured data with full SQL capabilities.",
+    whereUsed: "Used in various college database projects to implement relational schemas, foreign keys, and complex queries.",
+    whyLearned: "Learned in database management system (DBMS) academics to master ACID transactions, relational structures, and SQL query indexing."
+  },
+  {
+    name: "Supabase",
+    icon: SiSupabase,
+    category: "Database",
+    level: 80,
+    color: "#3ecf8e",
+    whyUsed: "Supabase is an open-source Firebase alternative providing auto-generated REST APIs, real-time database listeners, and auth.",
+    whereUsed: "Used as the backend for AgentForge and Sahayak, handling PostgreSQL databases, Google OAuth, and secure storage.",
+    whyLearned: "Self-learned to quickly deploy secure PostgreSQL databases, handles edge functions, and integrate user authentication flows."
+  },
+  {
+    name: "Prisma",
+    icon: SiPrisma,
+    category: "Database",
+    level: 75,
+    color: "#5a67d8",
+    whyUsed: "Prisma is an open-source Object-Relational Mapper (ORM) that makes database access type-safe and intuitive.",
+    whereUsed: "Used in serverless APIs to query databases, write migrations, and automatically generate TypeScript types.",
+    whyLearned: "Self-learned to ensure type-safe database queries and simplify schema migrations in serverless environments."
+  },
+  {
+    name: "AWS",
+    icon: FaAws,
+    category: "DevOps",
+    level: 65,
+    color: "#ff9900",
+    whyUsed: "AWS (Amazon Web Services) is the leading cloud computing platform, offering EC2 instances, S3 storage, and serverless hosting.",
+    whereUsed: "Used to explore cloud deployments, host static files on S3 buckets, and configure virtual private clouds (VPC).",
+    whyLearned: "Self-learned to deploy web servers, manage cloud hosting networks, and understand modern DevOps pipelines."
+  },
+  {
+    name: "Docker",
+    icon: SiDocker,
+    category: "DevOps",
+    level: 70,
+    color: "#2496ed",
+    whyUsed: "Docker packages applications and dependencies into standard containers, ensuring consistent execution across dev and prod.",
+    whereUsed: "Used to containerize Python Flask and Node.js backend services, preventing deployment inconsistencies.",
+    whyLearned: "Learned in devops academics at SPIT Mumbai to containerize applications and ensure consistent runtime execution across systems."
+  },
+  {
+    name: "Kubernetes",
+    icon: SiKubernetes,
+    category: "DevOps",
+    level: 60,
+    color: "#326ce5",
+    whyUsed: "Kubernetes is a container orchestration engine that automates the deployment, scaling, and load-balancing of Docker containers.",
+    whereUsed: "Used to deploy distributed application containers in local minikube clusters for testing resilience.",
+    whyLearned: "Learned in DevOps and systems configuration academics to study microservice orchestration, auto-scaling, and cluster management."
+  },
+  {
+    name: "Linux",
+    icon: SiLinux,
+    category: "DevOps",
+    level: 75,
+    color: "#fcc624",
+    whyUsed: "Linux is the open-source operating system standard for hosting web servers, running databases, and building code.",
+    whereUsed: "Used daily as the primary shell runtime via bash commands to manage server folders and run deployment tasks.",
+    whyLearned: "Learned in academics to master the command-line interface, server management, file systems, and bash scripting."
+  },
+  {
+    name: "Solidity",
+    icon: SiSolidity,
+    category: "Blockchain",
+    level: 70,
+    color: "#9c9c9c",
+    whyUsed: "Solidity is the primary programming language for writing smart contracts that run on the Ethereum Virtual Machine (EVM).",
+    whereUsed: "Used to write the core election contract for EzyVote, enforcing secure and transparent decentralized voting.",
+    whyLearned: "Self-learned out of curiosity for Web3 to write secure smart contracts and deploy decentralized applications."
+  },
+  {
+    name: "Git",
+    icon: SiGit,
+    category: "Tools",
+    level: 90,
+    color: "#f05032",
+    whyUsed: "Git is a distributed version control system that tracks source code revisions and facilitates team collaboration.",
+    whereUsed: "Used to manage code histories for all projects, coordinate tasks, and prevent code conflicts.",
+    whyLearned: "Learned during academics at SPIT Mumbai as the standard practice for codebase versioning and collaborative coding."
+  },
+  {
+    name: "GitHub",
+    icon: SiGithub,
+    category: "Tools",
+    level: 90,
+    color: "#ffffff",
+    whyUsed: "GitHub is a hosting service for Git repositories, offering pull requests, code reviews, issue tracking, and CI/CD pipelines.",
+    whereUsed: "Used to host all project codebases, publish open-source code, and automatically deploy web apps to Vercel.",
+    whyLearned: "Self-learned to host repositories, coordinate project pull requests, configure webhooks, and manage CI/CD pipelines."
+  },
+  {
+    name: "Postman",
+    icon: SiPostman,
+    category: "Tools",
+    level: 85,
+    color: "#ff6c37",
+    whyUsed: "Postman is an API client tool used to test REST endpoints, generate mock data, and document server endpoints.",
+    whereUsed: "Used to test and debug REST API routes for BidArena and Sahayak before connecting the frontend clients.",
+    whyLearned: "Learned in academics to test server endpoints, document API routes, and validate payload responses."
+  }
 ];
 
 export interface Project {
@@ -311,7 +513,7 @@ export const TERMINAL_COMMANDS: Record<string, string> = {
   experience  - View my education & achievements
   contact     - Get my contact info
   github      - Visit my GitHub
-  resume      - Download my resume
+  resume      - Download resume (Options: -tech, -ats, -photo)
   clear       - Clear terminal
   sudo hire-me - 😏`,
   about: `

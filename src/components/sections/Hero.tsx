@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Twitter } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/constants";
+import ResumeViewerModal from "@/components/ui/ResumeViewerModal";
 
 export default function Hero() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
     <section
       id="home"
@@ -75,14 +79,13 @@ export default function Hero() {
           >
             View My Work
           </a>
-          <a
-            href={PERSONAL_INFO.resumeUrl}
-            download
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary"
+          <button
+            onClick={() => setIsResumeOpen(true)}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary cursor-pointer"
           >
             <Download size={16} />
             Resume
-          </a>
+          </button>
         </motion.div>
 
         {/* Social links */}
@@ -136,6 +139,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
+      <ResumeViewerModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </section>
   );
 }

@@ -10,8 +10,8 @@ export default function CustomCursor() {
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
-  const springX = useSpring(cursorX, { damping: 40, stiffness: 800, mass: 0.2 });
-  const springY = useSpring(cursorY, { damping: 40, stiffness: 800, mass: 0.2 });
+  const springX = useSpring(cursorX, { damping: 25, stiffness: 1200, mass: 0.1 });
+  const springY = useSpring(cursorY, { damping: 25, stiffness: 1200, mass: 0.1 });
 
   useEffect(() => {
     // Don't show custom cursor on touch devices
@@ -60,8 +60,8 @@ export default function CustomCursor() {
       <motion.div
         className="custom-cursor pointer-events-none fixed top-0 left-0 z-[9999] rounded-full bg-primary"
         style={{
-          x: springX,
-          y: springY,
+          x: cursorX,
+          y: cursorY,
           width: isHovering ? 40 : 8,
           height: isHovering ? 40 : 8,
           translateX: isHovering ? -20 : -4,
@@ -74,12 +74,12 @@ export default function CustomCursor() {
       <motion.div
         className="custom-cursor pointer-events-none fixed top-0 left-0 z-[9998] rounded-full border border-primary/50"
         style={{
-          x: springX,
-          y: springY,
-          width: isHovering ? 50 : 32,
-          height: isHovering ? 50 : 32,
-          translateX: isHovering ? -25 : -16,
-          translateY: isHovering ? -25 : -16,
+          x: cursorX,
+          y: cursorY,
+          width: isHovering ? 48 : 32,
+          height: isHovering ? 48 : 32,
+          translateX: isHovering ? -24 : -16,
+          translateY: isHovering ? -24 : -16,
           opacity: hasMoved ? 1 : 0,
         }}
         transition={{ duration: 0.15 }}
