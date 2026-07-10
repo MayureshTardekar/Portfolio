@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Download, FileText, ExternalLink } from "lucide-react";
+import { X, Download, FileText, ExternalLink, Maximize2, Minimize2 } from "lucide-react";
 
 interface ResumeViewerModalProps {
   isOpen: boolean;
@@ -13,21 +13,21 @@ const resumeOptions = [
   {
     id: "tech",
     label: "v1",
-    file: "/resumes/resume-tech.pdf",
+    file: "/resumes/Mayuresh-tech.pdf",
     downloadName: "Mayuresh_Tardekar_Resume_v1.pdf",
     description: "Tailored for software engineering & full-stack development roles.",
   },
   {
     id: "ats",
     label: "v2",
-    file: "/resumes/resume-ats.pdf",
+    file: "/resumes/Mayuresh-ATS.pdf",
     downloadName: "Mayuresh_Tardekar_Resume_v2.pdf",
     description: "Text-optimized, clean format without a photo (perfect for automated trackers).",
   },
   {
     id: "photo",
     label: "v3",
-    file: "/resumes/resume-photo.pdf",
+    file: "/resumes/Mayuresh-photo.pdf",
     downloadName: "Mayuresh_Tardekar_Resume_v3.pdf",
     description: "Visual resume containing a professional profile photo.",
   },
@@ -35,6 +35,7 @@ const resumeOptions = [
 
 export default function ResumeViewerModal({ isOpen, onClose }: ResumeViewerModalProps) {
   const [activeTab, setActiveTab] = useState(resumeOptions[0]);
+  const [isMaximized, setIsMaximized] = useState(false);
 
   return (
     <AnimatePresence>
@@ -55,7 +56,9 @@ export default function ResumeViewerModal({ isOpen, onClose }: ResumeViewerModal
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="glass relative z-10 flex h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl"
+            className={`glass relative z-10 flex w-full flex-col overflow-hidden border border-border bg-card shadow-2xl transition-all duration-300 ${
+              isMaximized ? "h-screen w-screen max-w-none rounded-none border-0" : "h-[90vh] max-w-4xl rounded-2xl"
+            }`}
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-border px-6 py-4">
@@ -68,13 +71,22 @@ export default function ResumeViewerModal({ isOpen, onClose }: ResumeViewerModal
                   <p className="text-xs text-muted-foreground">Choose a format to view or download</p>
                 </div>
               </div>
-              <button
-                onClick={onClose}
-                aria-label="Close modal"
-                className="rounded-full border border-border bg-card p-2 text-muted-foreground transition-colors hover:border-primary hover:text-foreground cursor-pointer"
-              >
-                <X size={18} />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setIsMaximized(!isMaximized)}
+                  aria-label={isMaximized ? "Minimize window" : "Maximize window"}
+                  className="rounded-full border border-border bg-card p-2 text-muted-foreground transition-colors hover:border-primary hover:text-foreground cursor-pointer"
+                >
+                  {isMaximized ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+                </button>
+                <button
+                  onClick={onClose}
+                  aria-label="Close modal"
+                  className="rounded-full border border-border bg-card p-2 text-muted-foreground transition-colors hover:border-primary hover:text-foreground cursor-pointer"
+                >
+                  <X size={18} />
+                </button>
+              </div>
             </div>
 
             {/* Tabs Selector */}
