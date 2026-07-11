@@ -55,8 +55,6 @@ export const metadata: Metadata = {
   },
 };
 
-import Script from "next/script";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -68,17 +66,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ThemeProvider>{children}</ThemeProvider>
-        <Script id="forgeagent-widget" strategy="afterInteractive">
-          {`
-            (function() {
-              var s = document.createElement('script');
-              s.src = 'https://forgeagent.in/widget.js';
-              s.async = true;
-              s.dataset.botId = '6879209a-fe42-4c21-9f6a-7c3ceaf53d6a';
-              document.body.appendChild(s);
-            })();
-          `}
-        </Script>
+        <script
+          src="https://forgeagent.in/widget.js"
+          data-bot-id="6879209a-fe42-4c21-9f6a-7c3ceaf53d6a"
+          data-avatar-url="https://spmxctqgsgrjntbjeaxa.supabase.co/storage/v1/object/public/avatars/6879209a-fe42-4c21-9f6a-7c3ceaf53d6a/1783712389058.png"
+          data-size="48"
+          async
+        />
       </body>
     </html>
   );

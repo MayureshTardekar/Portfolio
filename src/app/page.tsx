@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -17,7 +17,6 @@ import GitHubActivity from "@/components/ui/GitHubActivity";
 import SpotifyWidget from "@/components/ui/SpotifyWidget";
 // import ChatBot from "@/components/ui/ChatBot";
 
-const HeroScene = lazy(() => import("@/components/three/HeroScene"));
 
 export default function Home() {
   const [terminalMode, setTerminalMode] = useState(false);
@@ -40,9 +39,6 @@ export default function Home() {
         ) : (
           <main key="portfolio">
             <div className="relative">
-              <Suspense fallback={null}>
-                <HeroScene />
-              </Suspense>
               <Hero />
             </div>
             <About />

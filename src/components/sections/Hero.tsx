@@ -14,6 +14,9 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
+      {/* Lightweight grid backdrop */}
+      <div className="grid-bg pointer-events-none absolute inset-0 -z-10" />
+
       {/* Background gradient orbs */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-primary/20 blur-[120px]" />

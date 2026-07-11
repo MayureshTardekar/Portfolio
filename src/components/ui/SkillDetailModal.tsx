@@ -72,7 +72,7 @@ export default function SkillDetailModal({ isOpen, onClose, skill }: SkillDetail
               <div className="rounded-xl border border-border/40 bg-muted/10 p-4">
                 <div className="mb-2 flex items-center gap-2 font-mono text-xs font-bold text-primary">
                   <HelpCircle size={14} />
-                  <span>// WHY IT IS USED</span>
+                  <span>// WHY THIS TECH</span>
                 </div>
                 <p className="text-sm leading-relaxed text-foreground/90">
                   {skill.whyUsed}
@@ -83,7 +83,7 @@ export default function SkillDetailModal({ isOpen, onClose, skill }: SkillDetail
               <div className="rounded-xl border border-border/40 bg-muted/10 p-4">
                 <div className="mb-2 flex items-center gap-2 font-mono text-xs font-bold text-cyan-400">
                   <Code2 size={14} />
-                  <span>// WHERE I USED IT</span>
+                  <span>// WHERE I'VE USED IT</span>
                 </div>
                 <p className="text-sm leading-relaxed text-foreground/90">
                   {skill.whereUsed}
@@ -94,7 +94,7 @@ export default function SkillDetailModal({ isOpen, onClose, skill }: SkillDetail
               <div className="rounded-xl border border-border/40 bg-muted/10 p-4">
                 <div className="mb-2 flex items-center gap-2 font-mono text-xs font-bold text-purple-400">
                   <GraduationCap size={14} />
-                  <span>// WHY I LEARNED IT</span>
+                  <span>// HOW I LEARNED IT</span>
                 </div>
                 <p className="text-sm leading-relaxed text-foreground/90">
                   {skill.whyLearned}
