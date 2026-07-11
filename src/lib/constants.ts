@@ -71,198 +71,198 @@ export const SKILLS: Skill[] = [
     icon: SiJavascript,
     category: "Languages",
     color: "#f7df1e",
-    whyUsed: "My daily driver for everything on the web — from DOM manipulation and async data flows to fully interactive UIs.",
-    whereUsed: "Powers the frontend of every project I've shipped — AgentForge, EzyVote, BidArena, and this portfolio.",
-    whyLearned: "Started with it at SPIT Mumbai, then went deep because every idea I wanted to build lived on the web."
+    whyUsed: "JavaScript is my core language for web development. I use it to create interactive user interfaces, handle asynchronous actions, fetch data dynamically, and manage state in single-page apps. It's the language that connects the browser DOM to complex logic.",
+    whereUsed: "It powers the core functionality across all my frontend applications, including EzyVote's client panel, BidArena's web sockets integration, Sahayak's interface, and the interactive widgets on this portfolio.",
+    whyLearned: "Learned the fundamentals during my computer applications curriculum at SPIT Mumbai. I then transitioned into advanced JavaScript (ES6+, Event Loop, Promises) by building real-world projects."
   },
   {
     name: "TypeScript",
     icon: SiTypescript,
     category: "Languages",
     color: "#3178c6",
-    whyUsed: "Catches my bugs before they run — static types and autocompletion make refactoring large codebases stress-free.",
-    whereUsed: "AgentForge, BidArena, and Sahayak — type-safe React components, shared API contracts, and this entire portfolio.",
-    whyLearned: "Self-taught after my plain-JS projects grew too big to trust. Never went back."
+    whyUsed: "TypeScript is essential for keeping large codebases scalable and error-free. It adds static typing, interfaces, and generic types to JavaScript, which lets me catch potential runtime errors during development and refactor code with confidence.",
+    whereUsed: "I used it in AgentForge to build type-safe React components and schema types, in Sahayak to ensure API requests match expectations, and throughout this entire Next.js portfolio.",
+    whyLearned: "Self-taught TypeScript after my plain JavaScript codebases grew too large and complex to maintain. The benefits of autocompletion and compiler safety made it my default stack."
   },
   {
     name: "Python",
     icon: SiPython,
     category: "Languages",
     color: "#3776ab",
-    whyUsed: "My go-to for ML pipelines, quick scripts, and backend glue — minimal ceremony, massive ecosystem.",
-    whereUsed: "Built Sahayak's ML backend with Flask, serving a DistilBERT text-classification model with Gemini API integration.",
-    whyLearned: "Self-taught to break into machine learning and automate the boring parts of my workflow."
+    whyUsed: "Python is my default choice for machine learning, data cleaning, and backend scripting. Its clean syntax and extensive ecosystem of libraries (like Pandas, NumPy, and Scikit-Learn) let me implement complex ML models and process data with very little overhead.",
+    whereUsed: "Built the ML backend for Sahayak using Flask, hosting a DistilBERT text-classification model and integrating with the Gemini API to analyze user queries.",
+    whyLearned: "Self-taught to explore machine learning, RAG pipelines, and automated scripting. It became an invaluable tool in my developer toolkit."
   },
   {
     name: "Java",
     icon: FaJava,
     category: "Languages",
     color: "#b07219",
-    whyUsed: "Where I learned to think in objects — solid foundations in OOP, interfaces, and multi-threaded design.",
-    whereUsed: "Academic projects at SPIT Mumbai — OOP design patterns, multi-threading, and clean architecture exercises.",
-    whyLearned: "Core of my curriculum at SPIT Mumbai — it shaped how I structure code in every other language."
+    whyUsed: "Java taught me structured Object-Oriented Programming (OOP) principles. It is excellent for building robust, multi-threaded applications, understanding design patterns (like MVC, Singleton, and Factory), and managing memory and class structures cleanly.",
+    whereUsed: "Used extensively in academic assignments and backend systems design at SPIT Mumbai to model complex data structures and solve object-oriented programming challenges.",
+    whyLearned: "Part of the MCA curriculum at SPIT Mumbai. Mastering Java helped me build a strong foundation in system architecture, compilation, and clean OOP practices."
   },
   {
     name: "C++",
     icon: TbBrandCpp,
     category: "Languages",
     color: "#00599c",
-    whyUsed: "My DSA weapon — fast, close to the metal, and the language I think in while problem-solving.",
-    whereUsed: "Hundreds of data-structure and algorithm problems solved during technical interview preparation.",
-    whyLearned: "Learned in academics to understand what actually happens under the hood — pointers, memory, and performance."
+    whyUsed: "C++ is my language of choice for solving complex Data Structures and Algorithms (DSA) problems. Because it compiles directly to machine code, it offers outstanding execution speed and complete control over memory management, pointers, and systems.",
+    whereUsed: "Used to solve hundreds of algorithmic challenges on LeetCode and GeeksforGeeks during technical interview preparation, focusing on dynamic programming, trees, and graphs.",
+    whyLearned: "Introduced in academics to master the fundamentals of low-level systems, pointers, and memory layout. I kept using it for competitive programming."
   },
   {
     name: "React",
     icon: SiReact,
     category: "Frontend",
     color: "#61dafb",
-    whyUsed: "Component thinking fits how I build — small, reusable pieces composed into complex, responsive interfaces.",
-    whereUsed: "The client side of AgentForge, BidArena, EzyVote, and Sahayak — SPAs, dashboards, and real-time UIs.",
-    whyLearned: "Introduced at SPIT Mumbai, mastered by shipping — every project pushed me deeper into hooks, state, and performance."
+    whyUsed: "React is my preferred framework for building component-driven user interfaces. Its virtual DOM, declarative state management, and custom hook patterns allow me to build modular, reactive, and highly reusable frontend components.",
+    whereUsed: "Built the dashboards and client dashboards for AgentForge, the live bidding room UI for BidArena, and the dynamic pages for Sahayak.",
+    whyLearned: "Introduced at SPIT Mumbai, but mastered by building projects. Reading React docs and shipping real UIs taught me about state optimization, virtual DOM rendering, and custom hooks."
   },
   {
     name: "Next.js",
     icon: SiNextdotjs,
     category: "Frontend",
     color: "#ffffff",
-    whyUsed: "React with superpowers — SSR, file-based routing, and API routes let me ship full-stack apps from one codebase.",
-    whereUsed: "The backbone of this portfolio — App Router, server components, API routes, and edge-ready deployment on Vercel.",
-    whyLearned: "Self-taught to build SEO-friendly, high-performance apps without stitching a separate backend together."
+    whyUsed: "Next.js is my default for production-ready web apps. It enhances React with Server-Side Rendering (SSR), Static Site Generation (SSG), file-based routing, and built-in API routes, making it easy to build SEO-friendly full-stack apps.",
+    whereUsed: "Powers this portfolio website using the Next.js App Router, React Server Components for fast loading, and Serverless API routes.",
+    whyLearned: "Self-taught to build high-performance web applications that demand excellent SEO, routing, and fast initial page loads out-of-the-box."
   },
   {
     name: "Tailwind CSS",
     icon: SiTailwindcss,
     category: "Frontend",
     color: "#06b6d4",
-    whyUsed: "Styling at the speed of thought — utility classes keep design decisions inside the component, not in a distant stylesheet.",
-    whereUsed: "Every modern UI I've built — AgentForge, BidArena, and this portfolio's theming, dark mode, and responsive layouts.",
-    whyLearned: "Self-taught after fighting CSS files one too many times — prototyping got 10x faster."
+    whyUsed: "Tailwind CSS allows me to design beautiful, modern interfaces at rapid speed. Its utility-first approach keeps my styling clean and co-located with the TSX code, eliminating the need to write and maintain massive CSS sheets.",
+    whereUsed: "Applied across all my modern projects, including the dashboards of AgentForge, the theme options in Sahayak, and the glassmorphic dark mode layout of this portfolio.",
+    whyLearned: "Self-taught to speed up my design prototyping. It transformed styling from a tedious layout process into a fast, fluid experience."
   },
   {
     name: "Node.js",
     icon: SiNodedotjs,
     category: "Backend",
     color: "#339933",
-    whyUsed: "JavaScript on the server — event-driven and fast, perfect for APIs and real-time WebSocket work.",
-    whereUsed: "BidArena's live auction backend — handling concurrent bidders, WebSocket streams, and Express APIs.",
-    whyLearned: "Self-taught to stay in one language across the stack and build real-time systems."
+    whyUsed: "Node.js allows me to write high-performance backend systems in JavaScript. Its event-driven, non-blocking I/O model makes it highly efficient and lightweight, perfect for running data-intensive real-time applications.",
+    whereUsed: "Built the real-time server for BidArena to handle concurrent live bidding events, WebSockets connectivity, and background timer events.",
+    whyLearned: "Self-taught Node.js to bridge the gap between frontend development and full-stack engineering, enabling me to build complete apps end-to-end."
   },
   {
     name: "Express",
     icon: SiExpress,
     category: "Backend",
     color: "#a0a0b0",
-    whyUsed: "Minimal, unopinionated, and battle-tested — my default for spinning up structured REST APIs fast.",
-    whereUsed: "BidArena's modular API layer — authentication, user registration, and live auction endpoints.",
-    whyLearned: "Learned at SPIT Mumbai as the standard Node micro-framework, refined through real projects."
+    whyUsed: "Express is a fast, unopinionated, minimalist web framework for Node.js. It simplifies route management, middleware creation, and HTTP request handling, providing a structured foundation for designing RESTful APIs.",
+    whereUsed: "Implemented the modular API routing, authentication middlewares, and session endpoints for the BidArena backend.",
+    whyLearned: "Learned the basics at SPIT Mumbai as the standard Node web framework, then mastered it by designing robust, production-style REST APIs."
   },
   {
     name: "MongoDB",
     icon: SiMongodb,
     category: "Database",
     color: "#47a248",
-    whyUsed: "Flexible schemas and JSON-native storage — ideal when the data model is still evolving.",
-    whereUsed: "BidArena's data layer — auction products, live bid histories, and user profiles.",
-    whyLearned: "Learned in the DBMS curriculum at SPIT Mumbai, then applied to production-style projects."
+    whyUsed: "MongoDB is my default NoSQL database. Its document-oriented structure stores data in flexible, JSON-like formats, which makes schema migrations unnecessary and speeds up iteration when requirements are changing.",
+    whereUsed: "Stored the product details, user bidding history, and dynamic live auction configurations for the BidArena project.",
+    whyLearned: "Learned in the DBMS class at SPIT Mumbai, then used it practically in full-stack projects to handle semi-structured data."
   },
   {
     name: "MySQL",
     icon: SiMysql,
     category: "Database",
     color: "#00758f",
-    whyUsed: "Relational rigor — foreign keys, joins, and ACID transactions for when data integrity is non-negotiable.",
-    whereUsed: "College database projects — relational schemas, complex queries, and indexing strategies.",
-    whyLearned: "DBMS academics at SPIT Mumbai — where I learned to model data properly before touching NoSQL."
+    whyUsed: "MySQL is my go-to relational database when data integrity, structured tables, and relationships are paramount. It guarantees ACID transactions, handles complex SQL joins efficiently, and enforces strict foreign key rules.",
+    whereUsed: "Designed and query-optimized relational schemas for multiple academic projects and inventory systems built during my coursework.",
+    whyLearned: "Mastered relational database design, normalization, indexing, and advanced SQL querying in the database management curriculum at SPIT Mumbai."
   },
   {
     name: "Supabase",
     icon: SiSupabase,
     category: "Database",
     color: "#3ecf8e",
-    whyUsed: "Postgres with batteries included — auth, storage, and realtime APIs without building a backend from scratch.",
-    whereUsed: "Backend for AgentForge and Sahayak — PostgreSQL, Google OAuth, row-level security, and file storage.",
-    whyLearned: "Self-taught to ship secure full-stack features fast without managing infrastructure."
+    whyUsed: "Supabase is an incredible open-source Firebase alternative. It provides a managed PostgreSQL database with auto-generated REST APIs, secure user authentication, row-level security (RLS), and real-time database subscription features out of the box.",
+    whereUsed: "Acts as the entire backend and database for AgentForge, handling user login, PostgreSQL data queries, and file storage for chatbot documents.",
+    whyLearned: "Self-taught to bypass building boilerplate backends, allowing me to focus on product features, security, and vector databases."
   },
   {
     name: "Prisma",
     icon: SiPrisma,
     category: "Database",
     color: "#5a67d8",
-    whyUsed: "Type-safe database access — the schema is the single source of truth and the types write themselves.",
-    whereUsed: "Serverless API routes — schema migrations, relational queries, and auto-generated TypeScript types.",
-    whyLearned: "Self-taught to stop hand-writing SQL strings and let the compiler catch data bugs."
+    whyUsed: "Prisma is a modern TypeScript ORM. It provides an intuitive schema definition language and generates fully type-safe database clients, preventing runtime SQL errors and making query auto-completion seamless.",
+    whereUsed: "Used in serverless Next.js API routes to handle migrations, relation queries, and database updates cleanly without hand-writing SQL queries.",
+    whyLearned: "Self-taught to improve backend developer experience and ensure the database layer is perfectly typed and synced with TypeScript types."
   },
   {
     name: "AWS",
     icon: FaAws,
     category: "DevOps",
     color: "#ff9900",
-    whyUsed: "The cloud standard — EC2, S3, and VPC fundamentals that every production deployment eventually touches.",
-    whereUsed: "Cloud experiments — static hosting on S3, EC2 web servers, and VPC network configuration.",
-    whyLearned: "Self-taught to understand where code actually runs after git push."
+    whyUsed: "AWS is the industry-standard cloud platform. I use it to host servers, manage storage buckets, and configure secure networks. It provides essential services like EC2 instances, S3 storage, and VPC setup.",
+    whereUsed: "Deployed static frontend builds on AWS S3, set up virtual servers with EC2, and configured VPC subnets for cloud networking experiments.",
+    whyLearned: "Self-taught the fundamentals of cloud infrastructure to understand how web applications scale and run in production environments."
   },
   {
     name: "Docker",
     icon: SiDocker,
     category: "DevOps",
     color: "#2496ed",
-    whyUsed: "\"Works on my machine\" — solved. Containers keep dev and prod identical.",
-    whereUsed: "Containerized Flask and Node.js services for consistent, reproducible deployments.",
-    whyLearned: "DevOps coursework at SPIT Mumbai — now a default part of how I ship backends."
+    whyUsed: "Docker simplifies deployment by packaging apps and their dependencies into lightweight, portable containers. It guarantees that the code runs exactly the same way in local dev, staging, and production environments.",
+    whereUsed: "Containerized the Flask ML service and Node.js backend to prevent dependency mismatches during deployment on server environments.",
+    whyLearned: "Learned in DevOps coursework at SPIT Mumbai to understand containerization, image building, and multi-stage container orchestration."
   },
   {
     name: "Kubernetes",
     icon: SiKubernetes,
     category: "DevOps",
     color: "#326ce5",
-    whyUsed: "Orchestration at scale — automated deployment, self-healing, and load-balancing for containerized apps.",
-    whereUsed: "Local minikube clusters — deploying distributed containers and testing resilience and scaling.",
-    whyLearned: "Systems coursework at SPIT Mumbai — to understand how microservices survive in production."
+    whyUsed: "Kubernetes is the industry standard for container orchestration. It automates container deployment, scaling, load balancing, and self-healing, making microservice architectures highly resilient and reliable.",
+    whereUsed: "Set up local minikube clusters to deploy distributed application containers, test automated scaling, and simulate node failures.",
+    whyLearned: "Studied in DevOps and systems configuration modules to understand how large production container clusters are managed."
   },
   {
     name: "Linux",
     icon: SiLinux,
     category: "DevOps",
     color: "#fcc624",
-    whyUsed: "Where servers live — the shell is my home for deployment, debugging, and automation.",
-    whereUsed: "Daily driver — bash scripting, server management, and every deployment task I run.",
-    whyLearned: "Academics first, then daily habit — the command line turned out to be the fastest UI there is."
+    whyUsed: "Linux is the operating system that powers modern cloud hosting and databases. Mastering the command line, shell scripts, and system config files is crucial for maintaining server environments and deploying apps.",
+    whereUsed: "Use Linux terminal and Bash scripting daily to automate folder structures, manage remote servers, and run deployment commands.",
+    whyLearned: "Learned through MCA academics and personal use to master terminal commands, permission structures, and automated shell scripting."
   },
   {
     name: "Solidity",
     icon: SiSolidity,
     category: "Blockchain",
     color: "#9c9c9c",
-    whyUsed: "Code that moves value — smart contracts where a bug costs real money, so precision matters.",
-    whereUsed: "EzyVote's core election contract — secure, transparent, tamper-proof on-chain voting.",
-    whyLearned: "Self-taught out of Web3 curiosity — ended up shipping a working dApp."
+    whyUsed: "Solidity is the primary language for writing smart contracts on Ethereum and other EVM-compatible blockchains. It requires extreme precision because deployed code is immutable and handles financial transactions.",
+    whereUsed: "Designed the core transparent election and voter verification contract for EzyVote, ensuring tamper-proof, secure on-chain elections.",
+    whyLearned: "Self-taught out of pure curiosity for decentralized apps (dApps) and Web3, leading to building secure smart contracts."
   },
   {
     name: "Git",
     icon: SiGit,
     category: "Tools",
     color: "#f05032",
-    whyUsed: "The safety net for everything I write — branch, experiment, and never lose work.",
-    whereUsed: "Every project, every commit — feature branches, clean histories, and conflict-free collaboration.",
-    whyLearned: "Standard practice from day one at SPIT Mumbai — now pure muscle memory."
+    whyUsed: "Git is my repository version control tool. It allows me to branch code, experiment with features, collaborate without conflicts, and maintain a complete historical record of code modifications.",
+    whereUsed: "Used daily to track all changes, branch out features, merge pull requests, and maintain clean commits across every single project I build.",
+    whyLearned: "Taught as a foundational development tool at SPIT Mumbai. It quickly became second nature for all code modifications."
   },
   {
     name: "GitHub",
     icon: SiGithub,
     category: "Tools",
     color: "#ffffff",
-    whyUsed: "Where my code lives publicly — PRs, reviews, issues, and CI/CD in one place.",
-    whereUsed: "All my repositories — open-source publishing and auto-deploys to Vercel via webhooks.",
-    whyLearned: "Self-taught while building a public portfolio of work worth showing."
+    whyUsed: "GitHub is the hub for collaboration, repository hosting, and CI/CD pipelines. It provides excellent pull request reviews, issue management, and GitHub Actions to deploy code automatically to host services.",
+    whereUsed: "Hosts all my open-source project codebases, integrates with Vercel webhooks for automatic deployments, and tracks task issues.",
+    whyLearned: "Self-taught to build a public presence, contribute to repositories, review code changes, and manage deployment workflows."
   },
   {
     name: "Postman",
     icon: SiPostman,
     category: "Tools",
     color: "#ff6c37",
-    whyUsed: "APIs verified before the frontend ever touches them — requests, environments, and mock data.",
-    whereUsed: "Testing and debugging every REST endpoint in BidArena and Sahayak.",
-    whyLearned: "Learned in academics, kept because untested endpoints always break at the worst time."
+    whyUsed: "Postman is an indispensable tool for testing and debugging APIs. It lets me craft requests, test headers and payloads, chain request variables, and document endpoints before writing frontend integration code.",
+    whereUsed: "Tested all the backend endpoints of BidArena and Sahayak, validating response payloads and status codes during API construction.",
+    whyLearned: "Learned in computer networks and systems courses at SPIT Mumbai to verify server responses and document REST endpoints."
   }
 ];
 

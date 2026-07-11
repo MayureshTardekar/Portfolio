@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
-  transpilePackages: ["three"],
+  devIndicators: false,
   images: {
     remotePatterns: [
       {
